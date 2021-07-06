@@ -1275,7 +1275,7 @@ function GameStore.processHouseRelatedPurchase(player, offerId, offerCount)
       local decoItemName = ItemType(offerId):getName()
       if kit then
         kit:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, "You bought this item in the Store.\nUnwrap it in your own house to create a <" .. decoItemName .. ">.")
-        kit:setActionId(offerId)
+        kit:setCustomAttribute("unWrapId", offerId)
 
         if isCaskItem(offerId) then
           kit:setAttribute(ITEM_ATTRIBUTE_DATE, offerCount)
@@ -1390,7 +1390,7 @@ function GameStore.processPreyBonusReroll(player, offerCount)
 end
 
 function GameStore.processTempleTeleportPurchase(player)
-  if player:getCondition(CONDITION_INFIGHT) or player:isPzLocked() then
+  if player:getCondition(CONDITION_INFIGHT, CONDITIONID_DEFAULT) or player:isPzLocked() then
     return error({code = 0, message = "You can't use temple teleport in fight!"})
   end
 

@@ -36,14 +36,14 @@ serverName = "OTG-Premium-Version"
 statusTimeout = 5 * 1000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 35
-networkAttackThreshold = 4
+networkAttackThreshold = 35
 maxItem = 2000
 maxContainer = 100
 
 -- Version Manual
 clientVersionMin = 1100
-clientVersionMax = 1240
-clientVersionStr = "Only support outdated 10.00 and version 12.40"
+clientVersionMax = 1261
+clientVersionStr = "Only support outdated 10.00 and version 12.61"
 
 -- Depot Limit
 freeDepotLimit = 2000
@@ -118,9 +118,9 @@ serverSaveShutdown = true
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages in data/XML/stages.xml
 rateExp = 1
-rateSkill = 35
-rateLoot = 3
-rateMagic = 25
+rateSkill = 100
+rateLoot = 5
+rateMagic = 60
 rateSpawn = 1
 
 -- Monster rates
